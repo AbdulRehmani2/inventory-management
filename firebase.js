@@ -1,13 +1,15 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { firestore, getFirestore } from "firebase/firestore"
+// import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore"
+import { getAuth } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: "inventory-management-16913.firebaseapp.com",
   projectId: "inventory-management-16913",
   storageBucket: "inventory-management-16913.appspot.com",
@@ -16,7 +18,10 @@ const firebaseConfig = {
   measurementId: "G-47JSW70183"
 };
 
-// Initialize Firebase
+console.log(process.env.NEXT_PUBLIC_TEST)
+
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-export const firestore = getFirestore(app);
+const auth = getAuth(app)
+const firestore = getFirestore(app);
+
+export { firestore };

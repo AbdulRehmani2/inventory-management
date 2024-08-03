@@ -1,13 +1,10 @@
-"use client"
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { Firestore } from "firebase/firestore";
-import { Box, Typography } from "@mui/material";
+import HomePage from '@/components/HomePage'
+import React from 'react'
 
-export default function Home() {
+function page() {
   return (
-    <Box>
-      <Typography variant="h1">Inventory Management</Typography>
-    </Box>
-  );
+    <HomePage/>
+  )
 }
+
+export default page
